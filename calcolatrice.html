@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolatrice Professionale</title>
+    <style>
+        /* Reset dei margini e padding di default */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7fb;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Contenitore principale */
+        .container {
+            background-color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            width: 100%;
+            max-width: 400px;
+            padding: 30px;
+            margin: 10px;
+        }
+
+        /* Titolo */
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        /* Stili per il form */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        input[type="number"], input[type="submit"], input[type="reset"], input[type="radio"] {
+            font-size: 16px;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            transition: all 0.3s ease;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"], input[type="reset"] {
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+            width: 100%;
+            padding: 12px;
+            border: none;
+        }
+
+        input[type="submit"]:hover, input[type="reset"]:hover {
+            background-color: #2980b9;
+        }
+
+        /* Radio buttons */
+        input[type="radio"] {
+            margin-right: 8px;
+            cursor: pointer;
+        }
+
+        /* Allineamento dei radio buttons */
+        .radio-group {
+            margin-bottom: 20px;
+        }
+
+        /* Stile per il bottone pulisci */
+        input[type="reset"] {
+            background-color: #e74c3c;
+        }
+
+        input[type="reset"]:hover {
+            background-color: #c0392b;
+        }
+
+        /* Aggiungi un po' di spazio tra gli elementi */
+        .radio-group label {
+            display: inline-block;
+            margin-right: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Calcolatrice</h1>
+
+        <form method="get" action="calcolatrice.php">
+            <label for="num1">Scegli il primo numero:</label>
+            <input type="number" name="num1" id="num1" required>
+
+            <label for="num2">Scegli il secondo numero:</label>
+            <input type="number" name="num2" id="num2" required>
+
+            <div class="radio-group">
+                <label>Più
+                    <input type="radio" name="operatore" value="piu" checked>
+                </label>
+                <label>Meno
+                    <input type="radio" name="operatore" value="meno">
+                </label>
+                <label>Per
+                    <input type="radio" name="operatore" value="per">
+                </label>
+                <label>Diviso
+                    <input type="radio" name="operatore" value="diviso">
+                </label>
+            </div>
+
+            <input type="submit" value="Calcola">
+            <input type="reset" value="Pulisci">
+        </form>
+    </div>
+
+</body>
+</html>
